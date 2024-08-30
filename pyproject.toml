@@ -10,6 +10,8 @@ packages = [{include = "czi_sampling", from = "src"}]
 python = "^3.8"
 czifile = "^2019.7.2"
 
+[tool.poetry.scripts]
+run_sampling = "czi_sampling.sampling:main"
 
 [build-system]
 requires = ["poetry-core"]
