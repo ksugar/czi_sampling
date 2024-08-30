@@ -22,7 +22,7 @@ def process_file(filename: Union[str, Path]):
     return index, image
 
 
-def main(input_dir: str, output_dir: str):
+def run(input_dir: str, output_dir: str):
     p_indir = Path(input_dir)
     p_indir.mkdir(parents=True, exist_ok=True)
     with mp.Pool(mp.cpu_count()) as pool:
@@ -126,7 +126,7 @@ def main(input_dir: str, output_dir: str):
     )
 
 
-if __name__ == "__main__":
+def main():
     parser = ArgumentParser(
         description="Downsample CZI images.",
         epilog="Example: python sampling.py dir_with_czi_files",
@@ -142,4 +142,8 @@ if __name__ == "__main__":
         help="Directory for saving downsampled images.",
     )
     args = parser.parse_args()
-    main(args.input_dir, args.output_dir)
+    run(args.input_dir, args.output_dir)
+
+
+if __name__ == "__main__":
+    main()
