@@ -7,9 +7,7 @@
 The following command will install the module from the main branch on the GitHub repository.
 
 ```bash
-git clone https://github.com/ksugar/czi_sampling/
-cd czi_sampling
-pip install .
+python -m pip install git+https://github.com/ksugar/czi_sampling
 ```
 
 ## Usage
@@ -36,5 +34,18 @@ movie1-16.czi/
 ### Run the script
 
 ```bash
-run_sampling movie1-16.czi/ ../sampling_result/
+run_sampling ./movie1-16.czi/movie1-16_AcquisitionBlock1.czi/ ../sampling_result/
+```
+
+### Output
+
+```txt
+sampling_result
+├── 4E.tif
+├── improved_t.tif
+├── improved_z.tif
+├── improved_zt1.tif
+├── improved_zt2.tif
+├── original.tif
+└── standard.tif
 ```
